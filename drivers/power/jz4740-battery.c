@@ -208,7 +208,7 @@ static void jz_battery_update(struct jz_battery *jz_battery)
 
 	voltage = jz_battery_read_voltage(jz_battery);
 	if (abs(voltage - jz_battery->voltage) < 50000) {
-		jz_battery->voltage = voltage;
+		jz_battery->voltage = voltage * 1000;
 		has_changed = true;
 	}
 
